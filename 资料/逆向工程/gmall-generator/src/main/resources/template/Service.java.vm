@@ -1,0 +1,21 @@
+package ${package}.${moduleName}.service;
+
+import com.baomidou.mybatisplus.extension.service.IService;
+import ${package}.common.bean.PageResultVo;
+import ${package}.common.bean.PageParamVo;
+import ${package}.${moduleName}.entity.${className}Entity;
+
+import java.util.Map;
+
+/**
+ * ${comments}
+ *
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+public interface ${className}Service extends IService<${className}Entity> {
+
+    PageResultVo queryPage(PageParamVo paramVo);
+}
+

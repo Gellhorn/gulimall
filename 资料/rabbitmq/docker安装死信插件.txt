@@ -1,0 +1,7 @@
+1. 首先我们将刚下载下来的rabbitmq_delayed_message_exchange-3.8.0.ez文件上传到RabbitMQ所在服务器
+2. 切换到插件所在目录，执行 docker cp rabbitmq_delayed_message_exchange-3.8.0.ez rabbitmq:/plugins 命令，将刚插件拷贝到容器内plugins目录下
+3. 执行 docker exec -it rabbitmq /bin/bash 命令进入到容器内部，并 cd plugins 进入plugins目录
+4. 执行 ls -l|grep delay  命令查看插件是否copy成功
+5. 在容器内plugins目录下，执行 rabbitmq-plugins enable rabbitmq_delayed_message_exchange  命令启用插件
+6. exit命令退出RabbitMQ容器内部，然后执行 docker restart rabbitmq 命令重启RabbitMQ容器
+

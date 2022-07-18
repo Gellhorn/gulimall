@@ -1,0 +1,18 @@
+
+安装elasticsearch：
+	
+	docker pull elasticsearch:6.8.1
+
+	docker run --name elasticsearch6.8.1 -d -e ES_JAVA_OPTS="-Xms512m -Xmx512m" --net host -e "discovery.type=single-node" -p 9200:9200 -p 9300:9300 elasticsearch:6.8.1
+
+	上传ik分词器并解压：unzip elasticsearch-analysis-ik-6.8.1.zip -d ik-analyzer
+
+	docker cp ./ik-analyzer elasticsearch6.8.1:/usr/share/elasticsearch/plugins
+
+	docker restart elasticsearch6.8.1
+
+安装kibana：
+	docker pull kibana:6.8.1
+	
+	docker run --name kibana6.8.1 -e ELASTICSEARCH_URL=http://172.16.116.100:9200 -p 5601:5601 -d kibana:6.8.1
+	需要等待一会儿访问：http://172.16.116.100:5601

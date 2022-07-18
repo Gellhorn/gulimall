@@ -1,0 +1,12 @@
+spring:
+  rabbitmq:
+    host: 172.16.116.100
+    username: fengge
+    password: fengge
+    virtual-host: /fengge
+#    publisher-confirms: true # 生产者消息确认
+#    publisher-returns: true # 生产者消息失败回调
+    listener:
+      simple:
+#        acknowledge-mode: manual # none auto manual
+        prefetch: 1 # 能者多劳
